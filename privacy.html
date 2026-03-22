@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Monitor — Privacy Policy</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.15rem; margin-top: 2rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.25rem; }
+    p, li { margin: 0.5rem 0; }
+    ul { padding-left: 1.5rem; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+    a { color: #0066cc; }
+    .highlight { background: #f5f5f5; border-left: 3px solid #ccc; padding: 0.75rem 1rem; border-radius: 0 4px 4px 0; margin: 1rem 0; }
+    .warning { background: #fff8e1; border-left: 3px solid #f9a825; padding: 0.75rem 1rem; border-radius: 0 4px 4px 0; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="meta">App: <strong>Phone Monitor</strong> &nbsp;·&nbsp; Last updated: 22 March 2026</p>
+
+<div class="warning">
+  <strong>Important:</strong> Phone Monitor is a device activity logging tool. It is designed to collect
+  detailed information about how a device is used. Before installing this app on any device, ensure
+  that the person using that device is aware it is installed and understands what is being recorded.
+  Installing monitoring software on a device without the knowledge of the person using it may be
+  illegal in your jurisdiction.
+</div>
+
+<div class="highlight">
+  <strong>Short version:</strong> Phone Monitor records extensive device activity and stores it locally.
+  If you configure a server URL, that data is uploaded to the server you specify. Once data leaves
+  the device, the app developer has no access to it, no control over it, and no ability to delete it.
+  You should assume that anything uploaded to a server is permanently outside your control.
+</div>
+
+<h2>1. What Phone Monitor does</h2>
+<p>
+  Phone Monitor is a device activity logger intended for parental monitoring or personal activity
+  tracking. It runs as a persistent background service and records events about how the device is used.
+  All recorded data is stored in a local database on the device. Optionally, data can be uploaded to
+  a server of your choosing for remote review.
+</p>
+<p>
+  The developer of this app does not operate any server that receives your data. The server is
+  configured entirely by you, and may be a server you control yourself or one operated by a third party.
+</p>
+
+<h2>2. Data collected and stored on the device</h2>
+<p>The following data is recorded continuously while the monitoring service is running:</p>
+
+<ul>
+  <li>
+    <strong>App usage</strong> — the package name and display name of every app that enters or leaves
+    the foreground, with timestamps and duration.
+  </li>
+  <li>
+    <strong>Screen events</strong> — when the screen turns on, turns off, or is unlocked, with timestamps.
+  </li>
+  <li>
+    <strong>Notifications</strong> — when a notification is posted or dismissed, including the package
+    name of the app that sent it and whether the notification is ongoing.
+    <em>Notification title and message text are not recorded.</em>
+  </li>
+  <li>
+    <strong>Phone call state</strong> — when the phone transitions between idle, ringing, and in-call
+    states, with timestamps.
+    <em>Phone numbers (caller ID or dialled numbers) are not recorded.</em>
+  </li>
+  <li>
+    <strong>SMS receipt</strong> — when an SMS message is received (requires READ_SMS permission).
+    <em>Message content and sender are not recorded.</em>
+  </li>
+  <li>
+    <strong>Battery</strong> — battery level, charging state changes (plugged in / unplugged / low
+    battery), and where available, current draw (µA) and charge capacity (µAh).
+  </li>
+  <li>
+    <strong>App installs, updates, and uninstalls</strong> — the package name and display name of
+    affected apps.
+  </li>
+  <li>
+    <strong>Permission changes</strong> — when Android permissions are granted or revoked.
+  </li>
+  <li>
+    <strong>Usage statistics snapshots</strong> — a periodic summary (approximately every 5 minutes)
+    of total foreground time per app since the previous snapshot.
+  </li>
+  <li>
+    <strong>Monitoring lifecycle events</strong> — when the monitoring service starts, stops, or is
+    stopped by the user.
+  </li>
+  <li>
+    <strong>Motion and inactivity</strong> (optional, off by default) — whether the device is in
+    motion or stationary, and periods of extended inactivity, using the accelerometer.
+  </li>
+</ul>
+
+<h2>3. Data uploaded to a server</h2>
+<p>
+  If you configure a server URL in the app's Settings, all of the data listed in Section 2 will be
+  uploaded to that server in batches. Uploads are triggered by a configurable schedule (time interval,
+  event count, or when the screen turns off).
+</p>
+<p>
+  Each upload also includes a <strong>device identifier</strong> — a cryptographic fingerprint of
+  a key generated in the device's secure hardware — used to authenticate the upload. This identifier
+  is unique to the app installation.
+</p>
+
+<div class="warning">
+  <strong>Once data is uploaded, it is beyond the app developer's control.</strong> The developer
+  has no visibility into, access to, or ability to delete data held on any server. You should treat
+  any data that leaves the device as permanently accessible to whoever operates that server.
+  If the server is operated by a third party, their own privacy policy governs how they use your data.
+  You are solely responsible for choosing a server you trust.
+</div>
+
+<p>
+  Data is transmitted over HTTPS and signed with a device-specific cryptographic key to protect
+  integrity in transit. However, once received by the server, the app provides no further guarantees
+  about how that data is stored, accessed, or shared.
+</p>
+<p>
+  If no server URL is configured, no data ever leaves the device.
+</p>
+
+<h2>4. Data we do not collect</h2>
+<p>The following data is explicitly <strong>not</strong> recorded by this app:</p>
+<ul>
+  <li>Notification title or message text</li>
+  <li>SMS message content or sender</li>
+  <li>Phone numbers (caller ID or dialled numbers)</li>
+  <li>Location or GPS data</li>
+  <li>Camera or microphone input</li>
+  <li>Contacts, photos, or files</li>
+  <li>Passwords, clipboard content, or any app screen content</li>
+  <li>Web browsing history</li>
+</ul>
+<p>
+  The developer does not operate any analytics service, crash reporter, or advertising network within
+  this app. No data is sent to the developer.
+</p>
+
+<h2>5. Android permissions explained</h2>
+<ul>
+  <li><strong>READ_CALL_LOG / READ_PHONE_STATE</strong> — used to detect call state changes (ringing, in-call, idle). No call log entries or phone numbers are read.</li>
+  <li><strong>READ_SMS</strong> — used to detect when an SMS arrives. Message content is not read.</li>
+  <li><strong>POST_NOTIFICATIONS</strong> — required on Android 13+ to display the persistent status notification while the service is running.</li>
+  <li><strong>PACKAGE_USAGE_STATS</strong> — required to identify which app is in the foreground. Must be granted manually in Android Settings.</li>
+  <li><strong>BIND_NOTIFICATION_LISTENER_SERVICE</strong> — required to observe notification arrivals and dismissals. Must be granted manually in Android Settings. Title and content are not read.</li>
+  <li><strong>FOREGROUND_SERVICE</strong> — required to keep the monitoring service running reliably in the background.</li>
+  <li><strong>RECEIVE_BOOT_COMPLETED</strong> — allows monitoring to resume automatically after the device restarts, if it was active before.</li>
+  <li><strong>INTERNET / ACCESS_NETWORK_STATE</strong> — required to upload data to a configured server.</li>
+  <li><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong> — allows the app to request exemption from battery optimisation, improving reliability of the background service.</li>
+</ul>
+
+<h2>6. Data retention and deletion</h2>
+<p>
+  Data stored locally on the device can be deleted at any time by uninstalling the app, which removes
+  the local database entirely.
+</p>
+<p>
+  Data that has been uploaded to a server cannot be deleted by this app. You must contact the operator
+  of that server directly to request deletion.
+</p>
+
+<h2>7. Consent and lawful use</h2>
+<p>
+  This app is intended for use as a parental monitoring tool (with the awareness of the monitored
+  person where required by law) or as a personal activity logger for your own device.
+</p>
+<p>
+  You are solely responsible for ensuring your use of this app complies with applicable laws in your
+  jurisdiction, including any laws relating to consent, workplace monitoring, and electronic surveillance.
+  <strong>Do not install this app on a device belonging to another person without their knowledge.</strong>
+</p>
+
+<h2>8. Children's privacy</h2>
+<p>
+  This app may be used by parents to monitor a minor child's device. In such cases, the parent or
+  guardian is responsible for the data collected and for any server it is sent to. The app developer
+  does not knowingly collect data about minors.
+</p>
+
+<h2>9. Changes to this policy</h2>
+<p>
+  If the privacy practices of the app change materially, this page will be updated with a new date at
+  the top. Continuing to use the app after a change constitutes acceptance of the updated policy.
+</p>
+
+<h2>10. Contact</h2>
+<p>
+  Questions about this privacy policy can be sent to
+  <a href="mailto:phonemonitor@rdacted.com">phonemonitor@rdacted.com</a>.
+</p>
+
+</body>
+</html>
